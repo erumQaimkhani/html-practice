@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #3e7cb1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .logo {
+      width: 120px;
+    }
+
+    .navbar nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 3rem 2rem;
+      background-color: #fff;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #3e7cb1;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    /* About Section */
+    #about {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 1.5rem;
+    }
+
+    /* Education Section */
+    .education-item {
+      text-align: left;
+      margin: 1rem 0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      background-color: #e6f3ff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Portfolio Section */
+    .portfolio-item {
+      display: inline-block;
+      margin: 1rem;
+      text-align: center;
+      width: 300px;
+    }
+
+    .portfolio-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-image:hover {
+      transform: scale(1.05);
+    }
+
+    /* Contact Form */
+
+    /* Contact Section */
+    #contact {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* Form Container */
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #7fd2df;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7fbeda;
+    }
+
+    /* Input Focus */
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: #52aec8;
+    }
+
+    /* Radio Button Styling */
+    .radio-group {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .radio-group label {
+      font-size: 1rem;
+      padding-right: 10px;
+    }
+
+    /* Checkbox Styling */
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    button[type="submit"] {
+      align-self: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .form-container {
+        gap: 15px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: #73a2cb;
+      color: #1a0909;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+
+      .navbar,
+      .navbar nav,
+      #about {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .portfolio-item {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body> 
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <img src="images.png" alt="Logo" class="logo">
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="section">
+    <div class="home-banner">
+      <img src="laptop-2443052_1280.jpg" alt="Banner Image" class="BANNER-image">
+      <h2>AGI</h2>
+      <p>"AGI" (Artificial General Intelligence) ek aisa advanced AI model hai jo insaano ki tarah diverse tasks me
+        sochne, samajhne aur sikhne ki capability rakhta hai...</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <img src="erum.jpg" alt="Profile Image" class="profile-image">
+    <div>
+      <h2>About</h2>
+      <p>Hi, I'm Erum Azeemi Qaimkhani, a tech enthusiast and AI developer with skills in HTML, CSS, TypeScript, and
+        more.</p>
+    </div>
+  </section>
+
+  <!-- Education Section  -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <div class="education-item">
+      <h3>Bachelor of Unani Medicine & Science (B.U.M.S)</h3>
+      <p>Institution: XYZ University</p>
+      <p>Year of Graduation: 2023</p>
+      <p>Achievements: Graduated with honors, conducted research on alternative medicine applications.</p>
+    </div>
+    <div class="education-item">
+      <h3>Matriculation in Science</h3>
+      <p>Institution: ABC High School</p>
+      <p>Year of Graduation: 2017</p>
+      <p>Achievements: Top 5% of the class, active in science clubs and community outreach.</p>
+    </div>
+  </section> 
+
+  <!-- Portfolio Section -->
+   <section id="portfolio" class="section">
+    <h2>Portfolio</h2> 
+    <!-- Project 1 - GitHub -->
+     <div class="portfolio-item">
+      <a href="https://github.com/erumQaimkhani/nextjs-dashboard.git" target="_blank">
+        <img src="https://github.com/erumQaimkhani/nextjs-dashboard/blob/main/public/hero-mobile.png?raw=true"
+          alt="GitHub Project" class="portfolio-image">
+      </a>
+      <p>GitHub Project - nextjs-dashboard Design Implementation</p>
+    </div> 
+
+    <!-- Project 2 - Vercel Deployment -->
+    <div class="portfolio-item">
+      <a href="https://hackthon-mailstone-bpynjfk42-erum-azeemi-qaimkhanis-projects.vercel.app/" target="_blank">
+        <img src="resume2.jpeg" alt="Vercel Project" class="portfolio-image">
+      </a>
+      <p>Vercel Deployment - Project 2</p>
+    </div>
+  </section> 
+
+  <!-- Contact Section -->
+
+   <h2>Contact</h2>
+   
+<section id="contact" class="section">
+  <h2>ContactUs</h2>
+  <form action="submit_form.php" method="post">
+    <div class="form-container">
+      
+      <label for="name">Your Details</label>
+      <input type="text" id="name" name="name" placeholder="Name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+      <label for="review">Your Review</label>
+      <textarea id="review" name="review" placeholder="Write your review" rows="3" required></textarea>
+      <label for="how-hear">How did you hear about us?</label>
+      <select id="how-hear" name="how-hear" required>
+        <option value="google">Google</option>
+        <option value="social-media">Social Media</option>
+        <option value="other">Other</option>
+      </select>
+      <label>Would you visit again?</label>
+      <div class="radio-group">
+        <label for="yes">Yes</label>
+        <input type="radio" id="yes" name="visit-again" value="yes">
+        <label for="no">No</label>
+        <input type="radio" id="no" name="visit-again" value="no">
+        <label for="maybe">Maybe</label>
+        <input type="radio" id="maybe" name="visit-again" value="maybe">
+      </div>
+      <label for="comments">Comments</label>
+      <textarea id="comments" name="comments" placeholder="Additional comments..." rows="3"></textarea>
+      <label for="subscribe">
+        <input type="checkbox" id="subscribe" name="subscribe"> Sign me up for email updates
+      </label>
+      <button type="submit">Submit Review</button>
+    </div>
+  </form>
+</section>
+
+  <footer>
+    &copy; 2024 Erum Azeemi Qaimkhani
+  </footer>
+</body>
+
+</html> 

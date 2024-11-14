@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>/* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f2f5f7;
+        }
+        
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+            background: #edeaea;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #150d0d;
+            font-size: 1.8rem;
+        }
+        
+        form label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #2c2222;
+        }
+        
+        form input[type="text"],
+        form input[type="email"],
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        form textarea {
+            resize: vertical;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .radio-group label {
+            font-weight: normal;
+            color: #333;
+        }
+        
+        form input[type="radio"],
+        form input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+        
+        button[type="submit"] {
+            width: 100%;
+            padding: 1rem;
+            background-color: #90d7eb;
+            color: #241919;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1.5rem;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #1f3b412f;
+        }
+        
+        /* Responsive Styling */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 1.5rem;
+            }
+        
+            h2 {
+                font-size: 1.5rem;
+            }
+        
+            button[type="submit"] {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+        </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Forms</h2>
+        <form action="submit_from.php" method="post">
+            <label for="name">Your Details</label>
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <label for="review">Your Review</label>
+            <textarea id="review" name="review" placeholder="Write your review" rows="3" required></textarea>
+            <label for="how-hear"> How did you hear about us?</label>
+            <select id="how-hear" name="how-hear" required>
+                <option value="google">Google</option>
+                <option value="social-media">Social-Media</option>
+                <option value="other">Other</option>
+            </select>
+            <label>Would you visit again</label>
+            <div class="radio-group">
+                <label for="yes">Yes</label>
+                <input type="radio" id="yes" name="visit-again" value="yes">
+                <label for="no">No</label>
+                <input type="radio" id="no" name="visit-again" value="no">
+                <label for="maybe">Maybe</label>
+                <input type="radio" id="maybe" name="visit-again" value="maybe">
+            </div>
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" placeholder="Additional comments ..." rows="3"></textarea>
+            <label for="subscribe">
+                <input type="checkbox" id="subscribe" name="subscribe">Sign me up for email updates
+            </label>
+            <button type="submit">Submit Review </button>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table</title>
+    <style>
+ * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.periodic-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.periodic-table th {
+    font-size: 1.5rem;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.periodic-table td {
+    width: 5.5%;
+    height: 80px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+.element {
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.element:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Add colors for specific groups of elements */
+#H, #Li, #Na, #K, #Rb, #Cs, #Fr {
+    background-color: #ff9999;
+}
+
+#Be, #Mg, #Ca, #Sr, #Ba, #Ra {
+    background-color: #ffcc99;
+}
+
+#Sc, #Ti, #V, #Cr, #Mn, #Fe, #Co, #Ni, #Cu, #Zn, #Y, #Zr, #Nb, #Mo, #Tc, #Ru, #Rh, #Pd, #Ag, #Cd, #Hf, #Ta, #W, #Re, #Os, #Ir, #Pt, #Au, #Hg, #Rf, #Db, #Sg, #Bh, #Hs, #Mt, #Ds, #Rg, #Cn {
+    background-color: #99ccff;
+}
+
+#B, #Al, #Ga, #In, #Tl {
+    background-color: #ffcc99;
+}
+
+#C, #Si, #Ge, #Sn, #Pb, #Fl {
+    background-color: #d9b3ff;
+}
+
+#N, #P, #As, #Sb, #Bi {
+    background-color: #ffb3e6;
+}
+
+#O, #S, #Se, #Te, #Po, #Lv {
+    background-color: #ffff99;
+}
+
+#F, #Cl, #Br, #I, #At, #Ts {
+    background-color: #99ff99;
+}
+
+#He, #Ne, #Ar, #Kr, #Xe, #Rn, #Og {
+    background-color: #b3e0ff;
+}
+
+/* Lanthanides */
+.lanthanides td {
+    background-color: #ccffcc;
+}
+
+/* Actinides */
+.actinides td {
+    background-color: #ffd9b3;
+}
+
+@media (max-width: 768px) {
+    .element {
+        font-size: 0.7rem;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .element {
+        font-size: 0.6rem;
+        height: 50px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+        <div class="table-container">
+            <table class="periodic-table">
+                <thead>
+                    <tr>
+                        <th colspan="18">Periodic Table  
+                            <!-- (103 Elements) -->
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Period 1 -->
+                    <tr>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="element" id="H">H<br>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="element" id="He">He<br>2</td>
+                    </tr>
+                    <!-- Period 2 -->
+                    <tr>
+                        <td class="element" id="Li">Li<br>3</td>
+                        <td class="element" id="Be">Be<br>4</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="element" id="B">B<br>5</td>
+                        <td class="element" id="C">C<br>6</td>
+                        <td class="element" id="N">N<br>7</td>
+                        <td class="element" id="O">O<br>8</td>
+                        <td class="element" id="F">F<br>9</td>
+                        <td class="element" id="Ne">Ne<br>10</td>
+                    </tr>
+                    <!-- Period 3 -->
+                    <tr>
+                        <td class="element" id="Na">Na<br>11</td>
+                        <td class="element" id="Mg">Mg<br>12</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="element" id="Al">Al<br>13</td>
+                        <td class="element" id="Si">Si<br>14</td>
+                        <td class="element" id="P">P<br>15</td>
+                        <td class="element" id="S">S<br>16</td>
+                        <td class="element" id="Cl">Cl<br>17</td>
+                        <td class="element" id="Ar">Ar<br>18</td>
+                    </tr>
+                    <!-- Period 4 -->
+                    <tr>
+                        <td class="element" id="K">K<br>19</td>
+                        <td class="element" id="Ca">Ca<br>20</td>
+                        <td class="element" id="Sc">Sc<br>21</td>
+                        <td class="element" id="Ti">Ti<br>22</td>
+                        <td class="element" id="V">V<br>23</td>
+                        <td class="element" id="Cr">Cr<br>24</td>
+                        <td class="element" id="Mn">Mn<br>25</td>
+                        <td class="element" id="Fe">Fe<br>26</td>
+                        <td class="element" id="Co">Co<br>27</td>
+                        <td class="element" id="Ni">Ni<br>28</td>
+                        <td class="element" id="Cu">Cu<br>29</td>
+                        <td class="element" id="Zn">Zn<br>30</td>
+                        <td class="element" id="Ga">Ga<br>31</td>
+                        <td class="element" id="Ge">Ge<br>32</td>
+                        <td class="element" id="As">As<br>33</td>
+                        <td class="element" id="Se">Se<br>34</td>
+                        <td class="element" id="Br">Br<br>35</td>
+                        <td class="element" id="Kr">Kr<br>36</td>
+                    </tr>
+                    <!-- Period 5 -->
+                    <tr>
+                        <td class="element" id="Rb">Rb<br>37</td>
+                        <td class="element" id="Sr">Sr<br>38</td>
+                        <td class="element" id="Y">Y<br>39</td>
+                        <td class="element" id="Zr">Zr<br>40</td>
+                        <td class="element" id="Nb">Nb<br>41</td>
+                        <td class="element" id="Mo">Mo<br>42</td>
+                        <td class="element" id="Tc">Tc<br>43</td>
+                        <td class="element" id="Ru">Ru<br>44</td>
+                        <td class="element" id="Rh">Rh<br>45</td>
+                        <td class="element" id="Pd">Pd<br>46</td>
+                        <td class="element" id="Ag">Ag<br>47</td>
+                        <td class="element" id="Cd">Cd<br>48</td>
+                        <td class="element" id="In">In<br>49</td>
+                        <td class="element" id="Sn">Sn<br>50</td>
+                        <td class="element" id="Sb">Sb<br>51</td>
+                        <td class="element" id="Te">Te<br>52</td>
+                        <td class="element" id="I">I<br>53</td>
+                        <td class="element" id="Xe">Xe<br>54</td>
+                    </tr>
+                    <!-- Period 6 -->
+                    <tr>
+                        <td class="element" id="Cs">Cs<br>55</td>
+                        <td class="element" id="Ba">Ba<br>56</td>
+                        <td class="lanthanides" colspan="2">La - Lu</td>
+                        <td class="element" id="Hf">Hf<br>72</td>
+                        <td class="element" id="Ta">Ta<br>73</td>
+                        <td class="element" id="W">W<br>74</td>
+                        <td class="element" id="Re">Re<br>75</td>
+                        <td class="element" id="Os">Os<br>76</td>
+                        <td class="element" id="Ir">Ir<br>77</td>
+                        <td class="element" id="Pt">Pt<br>78</td>
+                        <td class="element" id="Au">Au<br>79</td>
+                        <td class="element" id="Hg">Hg<br>80</td>
+                        <td class="element" id="Tl">Tl<br>81</td>
+                        <td class="element" id="Pb">Pb<br>82</td>
+                        <td class="element" id="Bi">Bi<br>83</td>
+                        <td class="element" id="Po">Po<br>84</td>
+                        <td class="element" id="At">At<br>85</td>
+                        <td class="element" id="Rn">Rn<br>86</td>
+                    </tr>
+                    <!-- Period 7 -->
+                    <tr>
+                        <td class="element" id="Fr">Fr<br>87</td>
+                        <td class="element" id="Ra">Ra<br>88</td>
+                        <td class="actinides" colspan="2">Ac - Lr</td>
+                        <td class="element" id="Rf">Rf<br>104</td>
+                        <td class="element" id="Db">Db<br>105</td>
+                        <td class="element" id="Sg">Sg<br>106</td>
+                        <td class="element" id="Bh">Bh<br>107</td>
+                        <td class="element" id="Hs">Hs<br>108</td>
+                        <td class="element" id="Mt">Mt<br>109</td>
+                        <td class="element" id="Ds">Ds<br>110</td>
+                        <td class="element" id="Rg">Rg<br>111</td>
+                        <td class="element" id="Cn">Cn<br>112</td>
+                        <td class="element" id="Nh">Nh<br>113</td>
+                        <td class="element" id="Fl">Fl<br>114</td>
+                        <td class="element" id="Mc">Mc<br>115</td>
+                        <td class="element" id="Lv">Lv<br>116</td>
+                        <td class="element" id="Ts">Ts<br>117</td>
+                        <td class="element" id="Og">Og<br>118</td>
+                    </tr>
+                    <!-- Lanthanides -->
+                    <tr class="lanthanides">
+                        <td class="element" id="La">La<br>57</td>
+                        <td class="element" id="Ce">Ce<br>58</td>
+                        <td class="element" id="Pr">Pr<br>59</td>
+                        <td class="element" id="Nd">Nd<br>60</td>
+                        <td class="element" id="Pm">Pm<br>61</td>
+                        <td class="element" id="Sm">Sm<br>62</td>
+                        <td class="element" id="Eu">Eu<br>63</td>
+                        <td class="element" id="Gd">Gd<br>64</td>
+                        <td class="element" id="Tb">Tb<br>65</td>
+                        <td class="element" id="Dy">Dy<br>66</td>
+                        <td class="element" id="Ho">Ho<br>67</td>
+                        <td class="element" id="Er">Er<br>68</td>
+                        <td class="element" id="Tm">Tm<br>69</td>
+                        <td class="element" id="Yb">Yb<br>70</td>
+                        <td class="element" id="Lu">Lu<br>71</td>
+                    </tr>
+                    <!-- Actinides -->
+                    <tr class="actinides">
+                        <td class="element" id="Ac">Ac<br>89</td>
+                        <td class="element" id="Th">Th<br>90</td>
+                        <td class="element" id="Pa">Pa<br>91</td>
+                        <td class="element" id="U">U<br>92</td>
+                        <td class="element" id="Np">Np<br>93</td>
+                        <td class="element" id="Pu">Pu<br>94</td>
+                        <td class="element" id="Am">Am<br>95</td>
+                        <td class="element" id="Cm">Cm<br>96</td>
+                        <td class="element" id="Bk">Bk<br>97</td>
+                        <td class="element" id="Cf">Cf<br>98</td>
+                        <td class="element" id="Es">Es<br>99</td>
+                        <td class="element" id="Fm">Fm<br>100</td>
+                        <td class="element" id="Md">Md<br>101</td>
+                        <td class="element" id="No">No<br>102</td>
+                        <td class="element" id="Lr">Lr<br>103</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    </html>
+    
+
